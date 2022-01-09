@@ -1,0 +1,37 @@
+Requirement from the simplilearn project -- Building a CI/CD pipeline with Jenkins
+Expectations : 
+  The following requirements should be met:
+    The app should be built with Maven.
+    The Tomcat server should allow remote deployment.
+    The pipeline should consist of three freestyle jobs for compilation, test, and deployment respectively.
+    
+Design:
+  Creating a Maven app
+    Used a  eclipse to form the app
+    For better results - forked a simple jave app
+  Building it it local for verification 
+    Build was locally successful 
+  Freestyle pipelines for CI / CT / CD
+    3 Free style job was created 
+      CI job 
+      -will poll SCM by a webhok for push and commit at the repo
+      -Buill build the maven projec with clean package goal
+      -It will all run the shell comman for convert .jar file to .war
+      -Results are documented
+     CT job
+      -It will be linked with CI job with post build action (build other project)
+      -JUNIT plugin is used to check the test coverage for the build code
+      -Results are documented
+     CD jon
+      -It will be linked with CT jon with post build action (build other projects)
+      -Build commands are executed for clean install goal for the maven app
+      -Post build actions are used to deploy the build .war file to a tomcat server
+      -Results are documented 
+  
+  Verifying the buid out put
+      -CI/CT and partially deploying is successful 
+  
+ OPLs to be clarfied:
+  -Tomcat package is not proper in my terminal
+  -I insalled the package and tried the shell commands are not executed 
+  -The lab terminal used for previous course was stable and installed with all needed tools
