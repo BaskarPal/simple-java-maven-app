@@ -1,0 +1,25 @@
+Started by upstream project "BaskarMavenCI" build number 23
+originally caused by:
+ Started by user admin
+Running as SYSTEM
+Building in workspace /home/labsuser/Baskar_Mavenapp
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /home/labsuser/Baskar_Mavenapp/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/BaskarPal/simple-java-maven-app.git # timeout=10
+Fetching upstream changes from https://github.com/BaskarPal/simple-java-maven-app.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.31.0'
+ > git fetch --tags --force --progress -- https://github.com/BaskarPal/simple-java-maven-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 436e3dbf75364618f15a05f20f8480440e149f0e (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 436e3dbf75364618f15a05f20f8480440e149f0e # timeout=10
+Commit message: "Update pom.xml"
+ > git rev-list --no-walk 013956f289f8cbfa1d4c4cc7bfc669ee1825af6f # timeout=10
+Recording test results
+None of the test reports contained any result
+[Checks API] No suitable checks publisher found.
+Triggering a new build of BaskarMaven_CD
+Finished: SUCCESS
