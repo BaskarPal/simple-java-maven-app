@@ -1,0 +1,123 @@
+Started by user admin
+Running as SYSTEM
+Building in workspace /home/labsuser/jenkins/workspace/BaskarMavenCI
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /home/labsuser/jenkins/workspace/BaskarMavenCI/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/BaskarPal/simple-java-maven-app.git # timeout=10
+Fetching upstream changes from https://github.com/BaskarPal/simple-java-maven-app.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.31.0'
+ > git fetch --tags --force --progress -- https://github.com/BaskarPal/simple-java-maven-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 436e3dbf75364618f15a05f20f8480440e149f0e (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 436e3dbf75364618f15a05f20f8480440e149f0e # timeout=10
+Commit message: "Update pom.xml"
+ > git rev-list --no-walk 013956f289f8cbfa1d4c4cc7bfc669ee1825af6f # timeout=10
+[BaskarMavenCI] $ mvn clean package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ----------------------< com.mycompany.app:my-app >----------------------
+[INFO] Building my-app 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ my-app ---
+[INFO] Deleting /home/labsuser/jenkins/workspace/BaskarMavenCI/target
+[INFO] 
+[INFO] --- maven-enforcer-plugin:3.0.0-M3:enforce (enforce-maven) @ my-app ---
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ my-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/labsuser/jenkins/workspace/BaskarMavenCI/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:compile (default-compile) @ my-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/labsuser/jenkins/workspace/BaskarMavenCI/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ my-app ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/labsuser/jenkins/workspace/BaskarMavenCI/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.1:testCompile (default-testCompile) @ my-app ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/labsuser/jenkins/workspace/BaskarMavenCI/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12.4:test (default-test) @ my-app ---
+[INFO] Surefire report directory: /home/labsuser/jenkins/workspace/BaskarMavenCI/target/surefire-reports
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Running com.mycompany.app.AppTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.105 sec
+
+Results :
+
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:3.2.0:jar (default-jar) @ my-app ---
+[INFO] Building jar: /home/labsuser/jenkins/workspace/BaskarMavenCI/target/my-app-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.262 s
+[INFO] Finished at: 2022-01-09T11:19:40Z
+[INFO] ------------------------------------------------------------------------
+[BaskarMavenCI] $ /bin/sh -xe /tmp/jenkins7823791634144004776.sh
++ jar -vcf my_app_1.0.war README.md jenkins my_app_1.0.war pom.xml src target
+added manifest
+adding: README.md(in = 758) (out= 422)(deflated 44%)
+adding: jenkins/(in = 0) (out= 0)(stored 0%)
+adding: jenkins/Jenkinsfile(in = 630) (out= 233)(deflated 63%)
+adding: jenkins/scripts/(in = 0) (out= 0)(stored 0%)
+adding: jenkins/scripts/deliver.sh(in = 1024) (out= 461)(deflated 54%)
+adding: pom.xml(in = 2185) (out= 686)(deflated 68%)
+adding: src/(in = 0) (out= 0)(stored 0%)
+adding: src/main/(in = 0) (out= 0)(stored 0%)
+adding: src/main/java/(in = 0) (out= 0)(stored 0%)
+adding: src/main/java/com/(in = 0) (out= 0)(stored 0%)
+adding: src/main/java/com/mycompany/(in = 0) (out= 0)(stored 0%)
+adding: src/main/java/com/mycompany/app/(in = 0) (out= 0)(stored 0%)
+adding: src/main/java/com/mycompany/app/App.java(in = 322) (out= 193)(deflated 40%)
+adding: src/test/(in = 0) (out= 0)(stored 0%)
+adding: src/test/java/(in = 0) (out= 0)(stored 0%)
+adding: src/test/java/com/(in = 0) (out= 0)(stored 0%)
+adding: src/test/java/com/mycompany/(in = 0) (out= 0)(stored 0%)
+adding: src/test/java/com/mycompany/app/(in = 0) (out= 0)(stored 0%)
+adding: src/test/java/com/mycompany/app/AppTest.java(in = 1009) (out= 427)(deflated 57%)
+adding: target/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-archiver/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-archiver/pom.properties(in = 65) (out= 62)(deflated 4%)
+adding: target/generated-test-sources/(in = 0) (out= 0)(stored 0%)
+adding: target/generated-test-sources/test-annotations/(in = 0) (out= 0)(stored 0%)
+adding: target/surefire-reports/(in = 0) (out= 0)(stored 0%)
+adding: target/surefire-reports/TEST-com.mycompany.app.AppTest.xml(in = 4266) (out= 1212)(deflated 71%)
+adding: target/surefire-reports/com.mycompany.app.AppTest.txt(in = 270) (out= 103)(deflated 61%)
+adding: target/test-classes/(in = 0) (out= 0)(stored 0%)
+adding: target/test-classes/com/(in = 0) (out= 0)(stored 0%)
+adding: target/test-classes/com/mycompany/(in = 0) (out= 0)(stored 0%)
+adding: target/test-classes/com/mycompany/app/(in = 0) (out= 0)(stored 0%)
+adding: target/test-classes/com/mycompany/app/AppTest.class(in = 1799) (out= 936)(deflated 47%)
+adding: target/generated-sources/(in = 0) (out= 0)(stored 0%)
+adding: target/generated-sources/annotations/(in = 0) (out= 0)(stored 0%)
+adding: target/classes/(in = 0) (out= 0)(stored 0%)
+adding: target/classes/com/(in = 0) (out= 0)(stored 0%)
+adding: target/classes/com/mycompany/(in = 0) (out= 0)(stored 0%)
+adding: target/classes/com/mycompany/app/(in = 0) (out= 0)(stored 0%)
+adding: target/classes/com/mycompany/app/App.class(in = 754) (out= 450)(deflated 40%)
+adding: target/maven-status/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-status/maven-compiler-plugin/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-status/maven-compiler-plugin/compile/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-status/maven-compiler-plugin/compile/default-compile/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst(in = 88) (out= 78)(deflated 11%)
+adding: target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst(in = 28) (out= 30)(deflated -7%)
+adding: target/maven-status/maven-compiler-plugin/testCompile/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/(in = 0) (out= 0)(stored 0%)
+adding: target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst(in = 92) (out= 81)(deflated 11%)
+adding: target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst(in = 32) (out= 34)(deflated -6%)
+adding: target/my-app-1.0-SNAPSHOT.jar(in = 2729) (out= 1736)(deflated 36%)
+Triggering a new build of BaskarMavenCT
+Finished: SUCCESS
